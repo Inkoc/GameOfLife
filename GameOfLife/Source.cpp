@@ -5,13 +5,23 @@
 
 using namespace std;
 
-int main() {
-	int delay = 100;
+int main() 
+{
+	//Grid with borders, 25% populated chance, random seed
+	//GameOfLife gameOfLife;
 
-	GameOfLife gameOfLife(true, 10);
+	//Infinite Grid, 20% populated chance, random seed
+	GameOfLife gameOfLife(true, 20);
+	
+	//Infinite Grid, 10% populated chance, seed 123
+	//GameOfLife gameOfLife(true, 10, 123);
+
 
 	//SFML Version
 	///*
+
+	//Delay in Milliseconds between each generation
+	int repeatDelayMs = 100;
 
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
@@ -30,7 +40,7 @@ int main() {
 				window.close();
 		}
 
-		if (clock.getElapsedTime().asMilliseconds()>=delay)
+		if (clock.getElapsedTime().asMilliseconds()>= repeatDelayMs)
 		{
 			window.clear(sf::Color(0,0,0));
 
